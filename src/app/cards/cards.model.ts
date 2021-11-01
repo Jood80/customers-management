@@ -1,5 +1,8 @@
 export class PersonDTO {
-  country: string = '';
+  id: string = '';
   name: string = '';
-  address: string = '';
+  country: string = '';
+  city: string = '';
+  orders: string[] = [''];
+  avatar: string = '';
 }

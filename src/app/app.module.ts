@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     CardsComponent,
+    CustomerComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     NgxPaginationModule,
     Ng2SearchPipeModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

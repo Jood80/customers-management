@@ -1,3 +1,64 @@
+<form [formGroup]="formValue">
+  <div class="row mx-4">
+    <div class="form-group col-12 col-sm-6">
+      <label for="exampleInputName">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputName"
+        formControlName="name"
+      />
+    </div>
+    <div class="form-group col-12 col-sm-6 mt-2 mt-sm-0">
+      <label for="exampleInputPassword1">Avatar</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputAvatar"
+        formControlName="avatar"
+      />
+    </div>
+  </div>
+  <div class="row mx-4">
+    <div class="col-12 col-sm-6">
+      <div class="form-group">
+        <label for="exampleInputCity">City</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputCity"
+          formControlName="city"
+        />
+      </div>
+    </div>
+    <div class="form-group col-12 col-sm-6 mt-2 mt-sm-0">
+      <label for="exampleInputCountry">Country</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputCountry"
+        formControlName="country"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputOrders">Orders</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputOrders"
+        formControlName="orders"
+      />
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="postUser()">
+    Submit
+  </button>
+  <button type="click" class="btn btn-primary" (click)="updateUser()">
+    update
+  </button>
+</form>
+
 <div class="form-group">
   <input
     type="text"
@@ -5,6 +66,22 @@
     placeholder="search..."
     [(ngModel)]="filterTerm"
   />
+
+  <button type="text" class="btn btn-primary" (click)="postUser()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="currentColor"
+      class="bi bi-plus-lg"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+      /></svg
+    >New Customer
+  </button>
 </div>
 <div class="content">
   <div
@@ -16,28 +93,50 @@
     "
   >
     <a class="card" target="_blank" rel="noopener" href="#">
-      <svg
-        class="material-icons"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"
-        />
-      </svg>
-      <span>{{ person.name }}</span>
-      <svg
-        class="material-icons"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-      </svg>
+      <img [src]="person.avatar" />
+      <div style="display: block">
+        <span>{{ person.name }}</span>
+        <span>{{ person.city }}, {{ person.country }}</span>
+        <span>{{ person.orders }}</span>
+      </div>
     </a>
+    <svg
+      class="material-icons"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="currentColor"
+      class="bi bi-pencil-square material-icons"
+      viewBox="0 0 16 16"
+      (click)="onEdit(person)"
+    >
+      <path
+        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+      />
+      <path
+        fill-rule="evenodd"
+        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
+      />
+    </svg>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      class="material-icons"
+      fill="red"
+      class="bi bi-trash"
+      viewBox="0 0 16 16"
+      (click)="removeUser(person)"
+    >
+      <path
+        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+      />
+      <path
+        fill-rule="evenodd"
+        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+      />
+    </svg>
   </div>
   <span>{{ people[0].name }}</span>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
