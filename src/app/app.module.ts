@@ -12,6 +12,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerComponent } from './customer/customer.component';
+import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CustomerComponent } from './customer/customer.component';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    NgxBootstrapIconsModule,
     Ng2SearchPipeModule,
     FormsModule,
     ReactiveFormsModule,
