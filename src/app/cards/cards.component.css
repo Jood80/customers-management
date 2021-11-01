@@ -8,18 +8,15 @@
     flex-wrap: wrap;
   }
 
-  svg.material-icons {
-    height: 24px;
+  img {
+    height: 80%;
     width: auto;
   }
 
-  svg.material-icons:not(:last-child) {
+  img:not(:last-child) {
     margin-right: 8px;
   }
 
-  .card svg.material-icons path {
-    fill: #888;
-  }
 
   .card-container {
     display: flex;
