@@ -111,7 +111,12 @@
 </style>
 
 <div class="content">
-  <div class="card-container" *ngFor="let person of people">
+  <div
+    class="card-container"
+    *ngFor="
+      let person of people | paginate: { itemsPerPage: 10, currentPage: p }
+    "
+  >
     <a
       class="card"
       target="_blank"
@@ -142,4 +147,5 @@
     </a>
   </div>
   <span>{{ people[0].name }}</span>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

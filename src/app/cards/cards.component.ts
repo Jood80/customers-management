@@ -11,6 +11,7 @@ import { PersonDTO } from './cards.model';
 export class CardsComponent implements OnInit {
   persons: PersonDTO = new PersonDTO();
   people: PersonDTO[] = [];
+  p: number = 1;
 
   constructor(private api: ApiService) {}
 
