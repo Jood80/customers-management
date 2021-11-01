@@ -9,6 +9,8 @@ import { CardsComponent } from './cards/cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -110,11 +110,21 @@
   }
 </style>
 
+<div class="form-group">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="search..."
+    [(ngModel)]="filterTerm"
+  />
+</div>
 <div class="content">
   <div
     class="card-container"
     *ngFor="
-      let person of people | paginate: { itemsPerPage: 10, currentPage: p }
+      let person of people
+        | filter: filterTerm
+        | paginate: { itemsPerPage: 10, currentPage: p }
     "
   >
     <a

@@ -12,6 +12,7 @@ export class CardsComponent implements OnInit {
   persons: PersonDTO = new PersonDTO();
   people: PersonDTO[] = [];
   p: number = 1;
+  filterTerm!: string;
 
   constructor(private api: ApiService) {}
 
