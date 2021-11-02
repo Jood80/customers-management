@@ -13,6 +13,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { OrdersComponent } from './orders/orders.component';
+import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { OrdersComponent } from './orders/orders.component';
     FooterComponent,
     CardsComponent,
     OrdersComponent,
+    AboutComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
