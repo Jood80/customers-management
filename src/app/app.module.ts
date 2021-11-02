@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CustomerComponent } from './customer/customer.component';
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
     NavbarComponent,
     FooterComponent,
     CardsComponent,
-    CustomerComponent,
+    OrdersComponent,
   ],
   imports: [
     CommonModule,

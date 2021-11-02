@@ -12,6 +12,10 @@ export class ApiService {
     return this.http.get<PersonDTO>('http://localhost:3000/data');
   }
 
+  getDataById(id: string) {
+    return this.http.get<PersonDTO>(`http://localhost:3000/data/${id}`);
+  }
+
   postData(data: PersonDTO) {
     return this.http.post<any>('http://localhost:3000/data', data);
   }

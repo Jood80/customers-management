@@ -92,7 +92,7 @@
         | paginate: { itemsPerPage: 10, currentPage: p }
     "
   >
-    <a class="card" target="_blank" rel="noopener" href="#">
+    <a class="card" routerLink="orders/{{ person.id }}">
       <img [src]="person.avatar" />
       <div style="display: block">
         <span>{{ person.name }}</span>
