@@ -1,4 +1,8 @@
-  .content {
+.container{
+  display: block;
+}
+
+.content {
     display: flex;
     margin: 82px auto 32px;
     padding: 0 16px;
