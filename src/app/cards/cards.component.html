@@ -141,7 +141,11 @@
     </div>
     <span>{{ people[0].name }}</span>
   </div>
+
   <div>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <pagination-controls
+      (pageChange)="p = $event"
+      class="my-pagination"
+    ></pagination-controls>
   </div>
 </div>
